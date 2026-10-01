@@ -1,0 +1,42 @@
+{
+  "scope": "Revisión estructural y decodificación. No constituye certificación antivirus ni autorización editorial de imágenes. Archivos copiados sin modificaciones.",
+  "assets": [
+    {
+      "file": "assets\\documents\\codigo-de-etica.pdf",
+      "source": "2023/03/codigo-de-etica.pdf",
+      "sha256": "e80bce3c17ed0cc0e11f82ac09a2bc91b3eeabdcc682cc9d44336b5f85c20235",
+      "pages": 10,
+      "active_content_findings": []
+    },
+    {
+      "file": "assets\\documents\\comunicado-tribunal.pdf",
+      "source": "2026/02/COMUNICADO-6-DE-FEBRERO-2026.pdf",
+      "sha256": "a867138bfe20e65ee721635d33a242942849511b539233e4918cbdca7698da84",
+      "pages": 1,
+      "active_content_findings": []
+    },
+    {
+      "file": "assets\\documents\\reglamento-tribunal.pdf",
+      "source": "2026/05/REGLAMENTO-INTERNO-TRIBUNAL-DE-DISCIPLINA.pdf",
+      "sha256": "d0508733cb740859f287807c2d74510244572ea3304b91088701182230e5611c",
+      "pages": 6,
+      "active_content_findings": []
+    },
+    {
+      "file": "assets\\documents\\catalogo-biblioteca.pdf",
+      "source": "2026/03/CATALOGO-TEST-comprimido-1.pdf",
+      "sha256": "8b8fe3795b10c8bcfd7cf97b0285f850ebc4c56ea2bc28766cc9146073ebc253",
+      "pages": 24,
+      "active_content_findings": []
+    },
+    {
+      "file": "assets\\images\\comunidad-psicopedagogia.jpg",
+      "source": "2026/06/IMG_3832.jpg",
+      "sha256": "af09dabe915d8e6ce2ebfe8245e30b40d60b00d24b1dca40fd07df4c0b647083",
+      "dimensions": [
+        900,
+        600
+      ]
+    }
+  ]
+}

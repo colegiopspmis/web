@@ -1,13 +1,5 @@
 <?php
-/**
- * page.php — Plantilla de páginas estáticas
- *
- * Para las páginas en la lista blanca de Brizy (el-colegio, contacto),
- * the_content() renderiza el contenido de Brizy correctamente.
- * Para el resto de páginas, renderiza HTML5 limpio.
- *
- * @package cspm-institucional
- */
+/** Página editable mediante el contenido normal de WordPress. */
 
 defined( 'ABSPATH' ) || exit;
 

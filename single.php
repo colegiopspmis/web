@@ -1,13 +1,5 @@
 <?php
-/**
- * single.php — Plantilla de entrada individual (Posts)
- *
- * IMPORTANTE: Las entradas pueden tener contenido heredado de Divi Builder.
- * the_content() renderiza el shortcode [et_pb_section...] correctamente
- * porque Divi sigue activo para post_type 'post' (ver functions.php).
- *
- * @package cspm-institucional
- */
+/** Entrada individual. Los shortcodes heredados requieren su plugin legítimo. */
 
 defined( 'ABSPATH' ) || exit;
 
@@ -30,7 +22,7 @@ get_header();
                     <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Inicio', 'cspm-institucional' ); ?></a></li>
                     <li aria-hidden="true" class="cspm-breadcrumb__sep">/</li>
                     <li>
-                        <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
+                        <a href="<?php echo esc_url( cspm_news_url() ); ?>">
                             <?php esc_html_e( 'Novedades', 'cspm-institucional' ); ?>
                         </a>
                     </li>

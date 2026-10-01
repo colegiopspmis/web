@@ -1,19 +1,5 @@
 <?php
-/**
- * front-page.php — Portada del Colegio de Psicopedagogos de Misiones
- *
- * Correcciones de auditoría aplicadas:
- *  ✔ H1 con el nombre de la institución (antes ausente en portada)
- *  ✔ Jerarquía de encabezados correcta (H1 → H2 → H3)
- *  ✔ Enlace YouTube corregido (función cspm_youtube_url)
- *  ✔ HTML5 semántico: <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>
- *  ✔ Aria-labels en secciones para accesibilidad
- *  ✔ Datos institucionales estáticos: Rivadavia 1436, Posadas / colegiopspmisiones@gmail.com
- *  ✔ Integración Tidio (psicopebot-simple) mediante snippet en footer
- *
- * @package cspm-institucional
- * @since   1.0.0
- */
+/** Portada institucional: seis publicaciones recientes y accesos a servicios. */
 
 defined( 'ABSPATH' ) || exit;
 
@@ -40,60 +26,9 @@ $youtube_video_id = get_theme_mod( 'cspm_youtube_video_id', '' );
     <!-- ================================================================ -->
     <!-- SECCIÓN 1 — HERO / PORTADA                                      -->
     <!-- ================================================================ -->
-    <section
-        class="cspm-hero"
-        aria-label="<?php esc_attr_e( 'Portada institucional', 'cspm-institucional' ); ?>"
-    >
-        <div class="cspm-hero__overlay" aria-hidden="true"></div>
-
-        <div class="cspm-hero__content cspm-container">
-            <!--
-                CORRECCIÓN AUDITORÍA:
-                El H1 principal de la portada es el nombre de la institución.
-                Anteriormente "Materiales" y "Biblioteca" llevaban el H1.
-            -->
-            <h1 class="cspm-hero__title">
-                <span class="cspm-hero__title-line1">
-                    <?php esc_html_e( 'Colegio de', 'cspm-institucional' ); ?>
-                </span>
-                <span class="cspm-hero__title-line2">
-                    <?php esc_html_e( 'Psicopedagogos', 'cspm-institucional' ); ?>
-                </span>
-                <span class="cspm-hero__title-line3">
-                    <?php esc_html_e( 'de Misiones', 'cspm-institucional' ); ?>
-                </span>
-            </h1>
-
-            <p class="cspm-hero__tagline">
-                <?php esc_html_e(
-                    'Formación continua, matrícula profesional y comunidad psicopedagógica en la provincia de Misiones.',
-                    'cspm-institucional'
-                ); ?>
-            </p>
-
-            <div class="cspm-hero__actions" role="group" aria-label="<?php esc_attr_e( 'Acciones principales', 'cspm-institucional' ); ?>">
-                <a
-                    href="<?php echo esc_url( home_url( '/tramites-2/' ) ); ?>"
-                    class="cspm-btn cspm-btn--primary"
-                >
-                    <?php esc_html_e( 'Trámites y Matrícula', 'cspm-institucional' ); ?>
-                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-
-                <a
-                    href="<?php echo esc_url( home_url( '/el-colegio/' ) ); ?>"
-                    class="cspm-btn cspm-btn--outline"
-                >
-                    <?php esc_html_e( 'Conocer el Colegio', 'cspm-institucional' ); ?>
-                </a>
-            </div>
-        </div>
-
-        <div class="cspm-hero__scroll-indicator" aria-hidden="true">
-            <span class="cspm-scroll-line"></span>
-        </div>
-    </section>
-
+    <?php while ( have_posts() ) : the_post(); ?>
+        <div class="cspm-home-blocks"><?php the_content(); ?></div>
+    <?php endwhile; ?>
 
     <!-- ================================================================ -->
     <!-- SECCIÓN 2 — ACCESOS RÁPIDOS (Quick Links)                       -->
@@ -114,7 +49,7 @@ $youtube_video_id = get_theme_mod( 'cspm_youtube_video_id', '' );
                             <?php esc_html_e( 'Padrón de Matriculados', 'cspm-institucional' ); ?>
                         </h2>
                         <p class="cspm-quick-link-card__desc">
-                            <?php esc_html_e( 'Consulta el listado actualizado de profesionales matriculados en la provincia.', 'cspm-institucional' ); ?>
+                            <?php esc_html_e( 'Información para consultar el estado de una matrícula profesional.', 'cspm-institucional' ); ?>
                         </p>
                     </a>
                 </li>
@@ -128,7 +63,7 @@ $youtube_video_id = get_theme_mod( 'cspm_youtube_video_id', '' );
                             <?php esc_html_e( 'Trámites y Certificados', 'cspm-institucional' ); ?>
                         </h2>
                         <p class="cspm-quick-link-card__desc">
-                            <?php esc_html_e( 'Solicita certificados de matrícula, habilitaciones y gestiona tus trámites en línea.', 'cspm-institucional' ); ?>
+                            <?php esc_html_e( 'Orientación sobre matrícula, certificados y gestiones profesionales.', 'cspm-institucional' ); ?>
                         </p>
                     </a>
                 </li>
@@ -154,7 +89,7 @@ $youtube_video_id = get_theme_mod( 'cspm_youtube_video_id', '' );
 
                 <li class="cspm-quick-link-card">
                     <a
-                        href="https://koha.colegiopspmisiones.com.ar/"
+                        href="https://colegiospmisiones.koha.theke.io/cgi-bin/koha/opac-main.pl"
                         class="cspm-quick-link-card__link"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -193,7 +128,7 @@ $youtube_video_id = get_theme_mod( 'cspm_youtube_video_id', '' );
                     <?php esc_html_e( 'Actividades, comunicados y noticias del Colegio.', 'cspm-institucional' ); ?>
                 </p>
                 <a
-                    href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>"
+                    href="<?php echo esc_url( cspm_news_url() ); ?>"
                     class="cspm-link-all"
                     aria-label="<?php esc_attr_e( 'Ver todas las novedades', 'cspm-institucional' ); ?>"
                 >

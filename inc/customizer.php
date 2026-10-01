@@ -1,15 +1,5 @@
 <?php
-/**
- * inc/customizer.php — Opciones del Customizer de WordPress
- *
- * Registra los controles de personalización del tema:
- *  - Redes sociales (Facebook, Instagram, YouTube)
- *  - Video YouTube institucional
- *  - Clave pública de Tidio (chatbot)
- *  - Colores de la paleta (en caso de querer ajustar sobre los defaults)
- *
- * @package cspm-institucional
- */
+/** Opciones de redes sociales y vídeo institucional. */
 
 defined( 'ABSPATH' ) || exit;
 
@@ -71,23 +61,4 @@ function cspm_customizer_register( WP_Customize_Manager $wp_customize ): void {
         'input_attrs' => [ 'placeholder' => 'dQw4w9WgXcQ' ],
     ] );
 
-    // ── Sección: Chatbot Tidio ─────────────────────────────────────────
-    $wp_customize->add_section( 'cspm_tidio', [
-        'title'    => __( 'Chatbot Tidio (psicopebot-simple)', 'cspm-institucional' ),
-        'panel'    => 'cspm_panel',
-        'priority' => 30,
-    ] );
-
-    $wp_customize->add_setting( 'cspm_tidio_public_key', [
-        'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'refresh',
-    ] );
-    $wp_customize->add_control( 'cspm_tidio_public_key', [
-        'label'       => __( 'Clave Pública de Tidio', 'cspm-institucional' ),
-        'description' => __( 'Se encuentra en el panel de Tidio → Settings → Installation → Public Key. No ingresar la clave privada.', 'cspm-institucional' ),
-        'section'     => 'cspm_tidio',
-        'type'        => 'text',
-        'input_attrs' => [ 'placeholder' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' ],
-    ] );
 }

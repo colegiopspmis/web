@@ -1,15 +1,5 @@
 <?php
-/**
- * footer.php — Pie de página global del tema CSPM Institucional
- *
- * Incluye:
- *  - <footer> semántico con role="contentinfo"
- *  - Columnas de menú, info institucional y datos de contacto
- *  - Integración del chatbot Tidio (psicopebot-simple) vía snippet seguro
- *  - wp_footer() que cierra el stack de scripts
- *
- * @package cspm-institucional
- */
+/** Pie institucional y áreas de navegación. */
 ?>
 
 <footer
@@ -138,9 +128,7 @@
 
         <!-- Columna 4: Widget área (configuración desde admin) -->
         <div class="cspm-footer-col cspm-footer-col--widgets">
-            <?php if ( is_active_sidebar( 'footer-col-2' ) ) : ?>
-                <?php dynamic_sidebar( 'footer-col-2' ); ?>
-            <?php endif; ?>
+
         </div>
 
     </div><!-- .cspm-footer-main -->
@@ -166,23 +154,6 @@
     </div>
 
 </footer>
-
-<?php
-/**
- * INTEGRACIÓN TIDIO — psicopebot-simple
- *
- * El script de Tidio se carga JUSTO ANTES de wp_footer() para no bloquear
- * el rendering. Se utiliza el ID público (no credenciales).
- * El Public Key se configura desde el Customizer: cspm_tidio_public_key.
- */
-$tidio_key = get_theme_mod( 'cspm_tidio_public_key', '' );
-if ( ! empty( $tidio_key ) ) :
-?>
-<script
-    src="//code.tidio.co/<?php echo esc_attr( $tidio_key ); ?>.js"
-    async
-></script>
-<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>

@@ -1,20 +1,11 @@
 /*
-Theme Name:        CSPM Institucional
-Theme URI:         https://github.com/colegiopspmisiones/cspm-institucional
-Author:            Colegio de Psicopedagogos de Misiones
-Author URI:        https://colegiopspmisiones.com.ar
-Description:       Tema institucional minimalista y moderno para el Colegio de Psicopedagogos de Misiones. Diseñado con HTML5 semántico, CSS custom properties y JavaScript vanilla. Compatible con Ninja Tables, Tidio y coexistencia controlada de Divi/Brizy.
-Version:           1.0.0
+Theme Name: CSPM Institucional
+Author: Colegio de Psicopedagogos de Misiones
+Description: Tema institucional independiente. Requiere configuración en una instalación limpia antes de publicar.
+Version: 1.2.0
 Requires at least: 6.4
-Tested up to:      6.7
-Requires PHP:      8.1
-License:           GNU General Public License v2 or later
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:       cspm-institucional
-Tags:              custom-menu, featured-images, responsive-layout, accessibility-ready
-
-/* -----------------------------------------------------------------------
-   NOTA: Los estilos de producción viven en assets/css/main.css
-   Este archivo existe únicamente para que WordPress reconozca el tema.
-   ----------------------------------------------------------------------- */
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cspm-institucional
 */

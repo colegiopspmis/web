@@ -21,13 +21,13 @@ get_header();
         <?php if ( have_posts() ) : ?>
 
             <header class="cspm-archive-header">
-                <h1 class="cspm-archive-title"><?php the_archive_title(); ?></h1>
+                <h1 class="cspm-archive-title"><?php echo esc_html( is_search() ? ( get_search_query() ? sprintf( __( 'Resultados para: %s', 'cspm-institucional' ), get_search_query() ) : __( 'Novedades', 'cspm-institucional' ) ) : __( 'Publicaciones', 'cspm-institucional' ) ); ?></h1>
                 <?php the_archive_description( '<p class="cspm-archive-desc">', '</p>' ); ?>
             </header>
 
             <div class="cspm-posts-grid">
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+                    <?php get_template_part( 'template-parts/content', 'post' ); ?>
                 <?php endwhile; ?>
             </div>
 

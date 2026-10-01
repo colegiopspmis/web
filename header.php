@@ -59,12 +59,7 @@
                         fetchpriority="high"
                     >
                 <?php else : ?>
-                    <span class="cspm-logo-text">
-                        <strong>CSPM</strong>
-                        <span class="cspm-logo-text__full">
-                            <?php bloginfo( 'name' ); ?>
-                        </span>
-                    </span>
+                    <img src="<?php echo cspm_asset_url( 'images/logo-color.png' ); ?>" alt="Colegio de Psicopedagogos de Misiones" class="cspm-logo-img" width="1624" height="1004" decoding="async">
                 <?php endif; ?>
             </a>
         </div>
