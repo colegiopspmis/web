@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/colegpsp/staging.colegiopspmisiones.com.ar/wp-content/themes/cspm-institucional
+    - export DEPLOYPATH=/home/colegpsp/public_html/staging-cspm/site/wp-content/themes/cspm-institucional
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R * $DEPLOYPATH
