@@ -211,3 +211,64 @@ h1,h2,h3,h4{font-family:var(--font-heading);color:#152e48;letter-spacing:-.035em
   .cspm-cd-featured-grid{grid-template-columns:1fr}
   .cspm-authority-featured-card__photo{aspect-ratio:4/3}
 }
+/* =========================================================================
+   CSPM 1.4 — Botón Autogestión, logo del pie y página Documentación
+   Añadido al final para no alterar la cascada existente.
+   ========================================================================= */
+
+/* ── Menú principal: botón Autogestión ── */
+.cspm-nav-primary{align-items:center;gap:16px;flex-wrap:nowrap}
+.cspm-nav__list>li>a{white-space:nowrap}
+.cspm-nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;min-height:44px;padding:10px 18px;border-radius:8px;background:#c43d86;color:#fff;font-size:14px;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;transition:background .2s}
+.cspm-nav-cta:hover,.cspm-nav-cta:focus-visible{background:#a8306f;color:#fff}
+.cspm-nav-cta:focus-visible{outline:3px solid #152e48;outline-offset:2px}
+/* Escritorio estrecho: compactar para que el menú más el botón quepan en una línea */
+@media(min-width:1024px) and (max-width:1199px){
+  .cspm-header-inner{gap:12px}
+  .cspm-logo-img{width:112px;height:69px}
+  .cspm-nav-primary{gap:10px}
+  .cspm-nav__list{gap:2px}
+  .cspm-nav__list>li>a{padding:8px 7px;font-size:13px}
+  .cspm-nav-cta{padding:9px 12px;font-size:13px}
+}
+/* Móvil / tablet: el botón va al final del panel desplegable */
+@media(max-width:1023px){
+  .cspm-nav-primary{flex-direction:column;align-items:stretch;gap:20px}
+  .cspm-nav-cta{min-height:48px;font-size:16px}
+}
+
+/* ── Footer: logo blanco ── */
+.cspm-footer-logo{align-items:flex-start}
+.cspm-footer-logo__img{display:block;width:240px;max-width:100%;height:auto}
+
+/* ── Página Documentación ── */
+.cspm-doc-hero{background:linear-gradient(135deg,#f0f8f8 0%,#fff 100%);border-bottom:1px solid #e2eded;padding:64px 0 52px;position:relative}
+.cspm-doc-hero:after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#eb57a3,#65b3ba 45%,#28b6bc)}
+.cspm-doc-hero h1{font-size:clamp(32px,4vw,48px);margin:0 0 18px}
+.cspm-doc-hero__lead,.cspm-doc-hero__lead p{font-size:18px;line-height:1.75;color:#506476;max-width:760px;margin:0}
+.cspm-doc-body{padding-top:56px;padding-bottom:72px}
+.cspm-doc-group+.cspm-doc-group{margin-top:64px}
+.cspm-doc-group__intro{font-size:17px;line-height:1.7;color:#506476;max-width:720px;margin:-16px 0 28px}
+.cspm-doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px}
+.cspm-doc-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:28px 26px;background:#fff;border:1px solid #dce8eb;border-top:3px solid #28b6bc;border-radius:12px;transition:box-shadow .25s,transform .25s;scroll-margin-top:calc(var(--header-height) + 24px)}
+.cspm-doc-card:hover,.cspm-doc-card:target{box-shadow:0 12px 32px rgba(21,46,72,.09)}
+.cspm-doc-card:hover{transform:translateY(-3px)}
+.cspm-doc-card:target{border-top-color:#eb57a3}
+.cspm-doc-card__icon{color:#08777d;flex-shrink:0}
+.cspm-doc-card__title{font-size:21px;margin:0}
+.cspm-doc-card__desc{font-size:15px;line-height:1.65;color:#506476;margin:0 0 auto}
+.cspm-doc-card__btn{margin-top:8px;gap:10px;text-decoration:none}
+.cspm-doc-card__size{font-size:12px;font-weight:500;opacity:.85}
+.cspm-doc-card__soon{margin-top:8px;font-size:14px;color:#506476;font-style:italic}
+@media(prefers-reduced-motion:reduce){.cspm-doc-card{transition:none}.cspm-doc-card:hover{transform:none}}
+/* ── Documentación: bloque con imagen (Buenas prácticas) ── */
+.cspm-doc-feature{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;margin-bottom:40px}
+.cspm-doc-feature .cspm-section-title{margin-bottom:24px}
+.cspm-doc-feature .cspm-doc-group__intro{margin:0 0 24px}
+.cspm-doc-quote{margin:0;padding:6px 0 6px 22px;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.35;letter-spacing:-.02em;color:#152e48;position:relative}
+.cspm-doc-quote:before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:99px;background:linear-gradient(180deg,#eb57a3,#28b6bc)}
+.cspm-doc-feature__art{margin:0;position:relative;border-radius:16px;overflow:hidden;background:#152e48}
+.cspm-doc-feature__art img{display:block;width:100%;height:auto;aspect-ratio:900/562;object-fit:cover}
+.cspm-doc-feature__art figcaption{color:#fff;padding:10px 20px;font-size:13px;letter-spacing:.03em}
+.cspm-doc-feature__art:after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#eb57a3,#65b3ba 45%,#28b6bc)}
+@media(max-width:900px){.cspm-doc-feature{grid-template-columns:1fr;gap:28px}}

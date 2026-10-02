@@ -18,10 +18,18 @@
                 aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"
                 rel="home"
             >
-                <span class="cspm-footer-logo__acronym" aria-hidden="true">CSPM</span>
-                <span class="cspm-footer-logo__name">
-                    <?php esc_html_e( 'Colegio de Psicopedagogos de Misiones', 'cspm-institucional' ); ?>
-                </span>
+                <?php
+                $footer_logo_id = (int) get_theme_mod( 'cspm_footer_logo', 0 );
+                if ( $footer_logo_id && wp_get_attachment_image_url( $footer_logo_id, 'full' ) ) {
+                    echo wp_get_attachment_image( $footer_logo_id, 'full', false, [
+                        'class' => 'cspm-footer-logo__img', 'alt' => '', 'loading' => 'lazy', 'decoding' => 'async',
+                    ] );
+                } else {
+                    ?>
+                    <img src="<?php echo cspm_asset_url( 'images/logo-blanco.png' ); ?>" alt="" class="cspm-footer-logo__img" width="720" height="445" loading="lazy" decoding="async">
+                    <?php
+                }
+                ?>
             </a>
             <p class="cspm-footer-tagline">
                 <?php esc_html_e( 'Formación, ética y excelencia en la práctica psicopedagógica.', 'cspm-institucional' ); ?>

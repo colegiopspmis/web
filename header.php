@@ -80,6 +80,13 @@
                 'items_wrap'     => '<ul id="%1$s" class="%2$s" role="list">%3$s</ul>',
             ] );
             ?>
+            <?php $cspm_autogestion = cspm_autogestion(); ?>
+            <?php if ( $cspm_autogestion['url'] ) : ?>
+                <a class="cspm-nav-cta" href="<?php echo esc_url( $cspm_autogestion['url'] ); ?>" rel="noopener">
+                    <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+                    <span><?php echo esc_html( $cspm_autogestion['label'] ); ?></span>
+                </a>
+            <?php endif; ?>
         </nav>
 
         <!-- Botón hamburguesa — móvil -->

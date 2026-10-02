@@ -41,6 +41,48 @@ function cspm_customizer_register( WP_Customize_Manager $wp_customize ): void {
         ] );
     }
 
+    // ── Sección: Identidad y menú ──────────────────────────────────────
+    $wp_customize->add_section( 'cspm_identity', [
+        'title'    => __( 'Logo del pie y botón Autogestión', 'cspm-institucional' ),
+        'panel'    => 'cspm_panel',
+        'priority' => 5,
+    ] );
+
+    $wp_customize->add_setting( 'cspm_footer_logo', [
+        'default'           => 0,
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ] );
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'cspm_footer_logo', [
+        'label'       => __( 'Logo blanco del pie de página', 'cspm-institucional' ),
+        'description' => __( 'Opcional. Si no se elige ninguno, se usa el logo blanco incluido en el tema.', 'cspm-institucional' ),
+        'section'     => 'cspm_identity',
+        'mime_type'   => 'image',
+    ] ) );
+
+    $wp_customize->add_setting( 'cspm_autogestion_url', [
+        'default'           => 'https://autogestion.colegiopspmisiones.com.ar/',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ] );
+    $wp_customize->add_control( 'cspm_autogestion_url', [
+        'label'       => __( 'Autogestión — URL', 'cspm-institucional' ),
+        'description' => __( 'Enlace del botón del menú. Déjalo vacío para ocultar el botón.', 'cspm-institucional' ),
+        'section'     => 'cspm_identity',
+        'type'        => 'url',
+    ] );
+
+    $wp_customize->add_setting( 'cspm_autogestion_label', [
+        'default'           => 'Autogestión',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ] );
+    $wp_customize->add_control( 'cspm_autogestion_label', [
+        'label'   => __( 'Autogestión — Texto del botón', 'cspm-institucional' ),
+        'section' => 'cspm_identity',
+        'type'    => 'text',
+    ] );
+
     // ── Sección: Video Institucional ───────────────────────────────────
     $wp_customize->add_section( 'cspm_video', [
         'title'    => __( 'Video Institucional (YouTube)', 'cspm-institucional' ),
