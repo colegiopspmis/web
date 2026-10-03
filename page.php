@@ -36,7 +36,7 @@ get_header();
         <?php endif; ?>
 
         <div class="cspm-container cspm-page-content entry-content">
-            <?php the_content(); ?>
+            <?php the_content(); if (is_page('contacto')) { cspm_communication_links(); } ?>
         </div>
 
     </article>

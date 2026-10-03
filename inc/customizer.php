@@ -22,14 +22,14 @@ function cspm_customizer_register( WP_Customize_Manager $wp_customize ): void {
     ] );
 
     $social_networks = [
-        'cspm_social_facebook'  => [ 'label' => 'Facebook URL',  'placeholder' => 'https://facebook.com/colegiopspmisiones' ],
-        'cspm_social_instagram' => [ 'label' => 'Instagram URL', 'placeholder' => 'https://instagram.com/colegiopspmisiones' ],
-        'cspm_social_youtube'   => [ 'label' => 'YouTube Canal', 'placeholder' => 'https://youtube.com/@colegiopspmisiones' ],
+        'cspm_social_facebook'  => [ 'label' => 'Facebook URL',  'placeholder' => 'https://www.facebook.com/colegiopspmisiones/' ],
+        'cspm_social_instagram' => [ 'label' => 'Instagram URL', 'placeholder' => 'https://www.instagram.com/colegiopspmisiones/' ],
+        'cspm_social_youtube'   => [ 'label' => 'YouTube Canal', 'placeholder' => 'https://www.youtube.com/@colegiopspmisiones6629' ],
     ];
 
     foreach ( $social_networks as $key => $meta ) {
         $wp_customize->add_setting( $key, [
-            'default'           => '',
+            'default'           => $meta['placeholder'],
             'sanitize_callback' => 'esc_url_raw',
             'transport'         => 'refresh',
         ] );

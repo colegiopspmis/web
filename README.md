@@ -1,3 +1,11 @@
+# Actualización 1.5.1
+
+Portada: tres entradas publicadas más recientes y botones turquesa con texto blanco. Incluye los cambios de 1.5.0. Ver docs/ACTUALIZACION-1.5.1.md para Git/cPanel.
+
+# Actualización 1.5.0
+
+Portada: Hero → Novedades → contenido institucional. Botones #28b6bc, Autogestión #0068b4. Redes y WhatsApp oficiales incorporados. Conserva el contenido de WordPress. Ver docs/ACTUALIZACION-1.5.0.md antes de desplegar.
+
 # CSPM 1.4.2 — 3 de octubre de 2026
 
 Base: ZIP 1.4.1 entregado por el usuario. No se reemplaza por las versiones anteriores.

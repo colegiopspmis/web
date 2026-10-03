@@ -352,3 +352,47 @@ h1,h2,h3,h4{font-family:var(--font-heading);color:#152e48;letter-spacing:-.035em
 .cspm-page-content .cspm-page-intro__lead{margin-bottom:0}
 .cspm-page-content .cspm-page-intro{padding-bottom:12px}
 .cspm-page-content .cspm-authorities-section{padding-top:20px}
+
+/* 1.5.0 — colores institucionales en superficies y controles; textos conservados. */
+:root{--brand-blue:#0068b4;--brand-turquoise:#28b6bc}
+.cspm-identity-hero:after,.cspm-doc-hero:after{background:linear-gradient(90deg,#0068b4,#28b6bc)}
+.cspm-btn--primary,
+.cspm-home-blocks .wp-block-button__link,
+.entry-content .wp-block-button__link{background:#28b6bc;color:#152e48;border:2px solid #28b6bc}
+.cspm-btn--primary:hover,
+.cspm-home-blocks .wp-block-button__link:hover,
+.entry-content .wp-block-button__link:hover{background:#28b6bc;color:#152e48;border-color:#0068b4;opacity:1;box-shadow:0 3px 0 #0068b4}
+.cspm-nav-cta,.cspm-nav-cta:hover,.cspm-nav-cta:focus-visible{background:#0068b4;color:#fff;opacity:1}
+.cspm-nav-cta:hover{text-decoration:underline;text-underline-offset:4px}
+.cspm-quick-link-card__icon{color:#0068b4;background:#e9f9fa}
+.cspm-quick-link-card:hover{border-color:#28b6bc}
+.cspm-authority-featured-card,.cspm-authority-card{border-top-color:#28b6bc}
+.cspm-home-blocks .cspm-novedades{padding:56px 0;background:#fff;border-bottom:1px solid #e2eded}
+.cspm-footer-social{flex-wrap:wrap;gap:10px}
+.cspm-footer-social .cspm-social-link{display:inline-flex;width:auto;height:auto;min-height:44px;align-items:center;gap:8px;padding:8px 12px;border:1px solid #28b6bc;border-radius:8px;background:transparent;color:#e7f2f5;font-size:13px}
+.cspm-footer-social .cspm-social-link:hover{background:#0068b4;color:#fff;opacity:1}
+.cspm-social-link svg{flex-shrink:0}
+.cspm-communication{padding:28px 0;margin-top:32px;border-top:3px solid #28b6bc}
+.cspm-communication-links{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.cspm-communication-links a{display:inline-flex;min-height:44px;align-items:center;padding:8px 16px;border:1px solid #28b6bc;border-radius:8px;text-decoration:none}
+.cspm-communication-links a:hover{background:#e9f9fa;text-decoration:underline}
+.cspm-communication .cspm-btn{white-space:normal;overflow-wrap:anywhere}
+/* Los listados comparten la identidad del tema sin cambiar sus datos. */
+.cspm-main .cspmp button,.cspm-main .cspmp .cspmp-pages a{background:#28b6bc;color:#152e48}
+.cspm-main .cspmp button:hover,.cspm-main .cspmp .cspmp-pages a:hover{background:#28b6bc;color:#152e48;box-shadow:0 3px 0 #0068b4}
+.cspm-main .cspmp-list-nav a[aria-current="page"]{background:#0068b4;border-color:#0068b4;color:#fff}
+.cspm-main .cspmp .cspmp-intro{border-top-color:#28b6bc}
+@media(max-width:600px){.cspm-home-blocks .cspm-novedades{padding:36px 0}.cspm-footer-social .cspm-social-link{min-height:48px}}
+.cspm-resource-card__icon,.cspm-doc-card__icon{color:#0068b4}
+.cspm-cta-autoridades__inner{background:linear-gradient(135deg,#152e48,#0068b4)}
+.cspm-tribunal-docs .is-style-outline .wp-block-button__link{border-color:#28b6bc;background:#28b6bc;color:#152e48}
+.cspm-tribunal-docs .is-style-outline .wp-block-button__link:hover{border-color:#0068b4;background:#28b6bc;color:#152e48}
+.cspm-home-blocks .wp-block-button__link,.entry-content .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center}
+
+/* 1.5.1 — texto blanco solicitado para los botones turquesa. */
+.cspm-btn--primary,.cspm-btn--primary:hover,
+.cspm-home-blocks .wp-block-button__link,.cspm-home-blocks .wp-block-button__link:hover,
+.entry-content .wp-block-button__link,.entry-content .wp-block-button__link:hover,
+.cspm-tribunal-docs .is-style-outline .wp-block-button__link,.cspm-tribunal-docs .is-style-outline .wp-block-button__link:hover,
+.cspm-main .cspmp button,.cspm-main .cspmp button:hover,
+.cspm-main .cspmp .cspmp-pages a,.cspm-main .cspmp .cspmp-pages a:hover{color:#fff}

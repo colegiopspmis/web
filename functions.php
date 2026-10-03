@@ -1,7 +1,7 @@
 <?php
 /** Tema independiente para una instalación nueva. */
 defined( 'ABSPATH' ) || exit;
-define( 'CSPM_VERSION', '1.4.2' );
+define( 'CSPM_VERSION', '1.5.1' );
 define( 'CSPM_DIR', get_template_directory() );
 define( 'CSPM_URI', get_template_directory_uri() );
 define( 'CSPM_ASSETS', CSPM_URI . '/assets' );
@@ -81,3 +81,6 @@ require_once CSPM_DIR . '/inc/customizer.php';
 require_once CSPM_DIR . '/inc/documents.php';
 
 require_once CSPM_DIR . '/inc/institutional-blocks.php';
+
+require_once CSPM_DIR . '/inc/home-layout.php';
+require_once CSPM_DIR . '/inc/communication.php';
